@@ -21,6 +21,7 @@ class ReviewFormHandler extends ManagerHandler {
 	 */
 	function ReviewFormHandler() {
 		parent::ManagerHandler();
+		$this->addRoleAssignment(ROLE_ID_MANAGER, 'reviewForms');
 	}
 
 	/**
