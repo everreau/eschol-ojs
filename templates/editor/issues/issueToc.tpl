@@ -196,7 +196,7 @@ $(document).ready(function() {
     <p style="padding: 5px; background: #F0B1A8;">Issue cannot be {$publishedOrUpdated} because one or more articles do not have galleys. To add a galley, click on the article title above and upload a file in the "3. EDITING --&gt; Layout" section.</p>
 {/if}
 
-<p><strong>Having trouble publishing this issue? <a href="https://getsatisfaction.com/cdl/topics/i_just_tried_to_publish_a_journal_issue_but_it_isnt_showing_up_on_escholarship_org_or_only_some_of" target="_blank">Click here for help</a>.</strong> </p>
+<p><strong>Please allow up to 30 minutes for your issue to appear publicly.<br/>Still having trouble publishing this issue? <a href="https://help.escholarship.org/support/solutions/articles/9000067815-i-just-tried-to-publish-a-journal-issue-but-it-isn-t-showing-up-on-escholarship-org-or-only-some-of-" target="_blank">Click here for help</a>.</strong> </p>
 </form>
 
 {/if}
