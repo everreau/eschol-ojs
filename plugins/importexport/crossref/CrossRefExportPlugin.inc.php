@@ -269,7 +269,7 @@ class CrossRefExportPlugin extends ImportExportPlugin {
                          throw new Exception('Failed to generate an ARK for " . $articleID');
 					 }
 					 else{
-					     $escholURL = ereg_replace("ark:13030\/qt","http://www.escholarship.org/uc/item/",$qualifiedArk);
+					     $escholURL = ereg_replace("ark:13030\/qt","https://escholarship.org/uc/item/",$qualifiedArk);
 						 error_log("For ARTICLE ID $articleID generated this eSchol URL:" . $escholURL);
                          return $escholURL;						 
 					 }
@@ -277,7 +277,7 @@ class CrossRefExportPlugin extends ImportExportPlugin {
 				//If an ARK already exists, use that
 				else {				
 				   error_log($qualifiedArk . " is the ARK for " . $articleID);
-				   $escholURL = ereg_replace("ark:13030\/qt","http://www.escholarship.org/uc/item/",$qualifiedArk);
+				   $escholURL = ereg_replace("ark:13030\/qt","https://escholarship.org/uc/item/",$qualifiedArk);
                    error_log("CrossRef Plugin using this eSchol URL:" . 	$escholURL);			   
                    return $escholURL;				   
 				}
