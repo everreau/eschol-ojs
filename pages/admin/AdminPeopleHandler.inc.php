@@ -52,7 +52,7 @@ class AdminPeopleHandler extends AdminHandler {
 		if (Request::getUserVar('roleSymbolic')!=null) $roleSymbolic = Request::getUserVar('roleSymbolic');
 		else $roleSymbolic = isset($args[0])?$args[0]:'all';
 
-		if ($roleSymbolic != 'all' && String::regexp_match_get('/^(\w+)s$/', $roleSymbolic, $matches)) {
+		if ($roleSymbolic != 'all' && OjsString::regexp_match_get('/^(\w+)s$/', $roleSymbolic, $matches)) {
 			$roleId = $roleDao->getRoleIdFromPath($matches[1]);
 			if ($roleId == null) {
 				Request::redirect(null, null, null, 'all');
@@ -72,7 +72,7 @@ class AdminPeopleHandler extends AdminHandler {
 			$searchMatch = Request::getUserVar('searchMatch');
 
 		} else if (!empty($searchInitial)) {
-			$searchInitial = String::strtoupper($searchInitial);
+			$searchInitial = OjsString::strtoupper($searchInitial);
 			$searchType = USER_FIELD_INITIAL;
 			$search = $searchInitial;
 		}

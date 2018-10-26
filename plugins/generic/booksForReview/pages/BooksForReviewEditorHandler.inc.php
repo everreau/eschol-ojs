@@ -410,7 +410,7 @@ class BooksForReviewEditorHandler extends Handler {
 			$searchMatch = $request->getUserVar('searchMatch');
 
 		} else if (isset($searchInitial)) {
-			$searchInitial = String::strtoupper($searchInitial);
+			$searchInitial = OjsString::strtoupper($searchInitial);
 			$searchType = USER_FIELD_INITIAL;
 			$search = $searchInitial;
 		}
@@ -653,12 +653,12 @@ class BooksForReviewEditorHandler extends Handler {
 
 						$paramArray = array(
 							'authorName' => strip_tags($userName),
-							'authorMailingAddress' => String::html2text($userMailingAddress),
+							'authorMailingAddress' => OjsString::html2text($userMailingAddress),
 							'bookForReviewTitle' => '"' . strip_tags($book->getLocalizedTitle()) . '"',
 							'bookForReviewDueDate' => date('l, F j, Y', $dueDateTimestamp),
 							'userProfileUrl' => $request->url(null, 'user', 'profile'),
 							'submissionUrl' => $request->url(null, 'author', 'submit'),
-							'editorialContactSignature' => String::html2text($book->getEditorContactSignature())
+							'editorialContactSignature' => OjsString::html2text($book->getEditorContactSignature())
 						);
 
 						$email->addRecipient($userEmail, $userName);
@@ -733,7 +733,7 @@ class BooksForReviewEditorHandler extends Handler {
 						'authorName' => strip_tags($userFullName),
 						'bookForReviewTitle' => '"' . strip_tags($book->getLocalizedTitle()) . '"',
 						'submissionUrl' => $request->url(null, 'author', 'submit'),
-						'editorialContactSignature' => String::html2text($book->getEditorContactSignature())
+						'editorialContactSignature' => OjsString::html2text($book->getEditorContactSignature())
 					);
 
 					$email->addRecipient($userEmail, $userFullName);
@@ -816,10 +816,10 @@ class BooksForReviewEditorHandler extends Handler {
 
 					$paramArray = array(
 						'authorName' => strip_tags($userFullName),
-						'authorMailingAddress' => String::html2text($userMailingAddress),
+						'authorMailingAddress' => OjsString::html2text($userMailingAddress),
 						'bookForReviewTitle' => '"' . strip_tags($book->getLocalizedTitle()) . '"',
 						'submissionUrl' => $request->url(null, 'author', 'submit'),
-						'editorialContactSignature' => String::html2text($book->getEditorContactSignature())
+						'editorialContactSignature' => OjsString::html2text($book->getEditorContactSignature())
 					);
 
 					$email->addRecipient($userEmail, $userFullName);
@@ -898,7 +898,7 @@ class BooksForReviewEditorHandler extends Handler {
 					$paramArray = array(
 						'authorName' => strip_tags($userFullName),
 						'bookForReviewTitle' => '"' . strip_tags($book->getLocalizedTitle()) . '"',
-						'editorialContactSignature' => String::html2text($book->getEditorContactSignature())
+						'editorialContactSignature' => OjsString::html2text($book->getEditorContactSignature())
 					);
 
 					$email->addRecipient($userEmail, $userFullName);

@@ -55,13 +55,13 @@ class ArticleSearch {
 		$return = array('+' => array(), '' => array(), '-' => array());
 		$postBool = $preBool = '';
 
-		$notOperator = String::strtolower(Locale::translate('search.operator.not'));
-		$andOperator = String::strtolower(Locale::translate('search.operator.and'));
-		$orOperator = String::strtolower(Locale::translate('search.operator.or'));
+		$notOperator = OjsString::strtolower(Locale::translate('search.operator.not'));
+		$andOperator = OjsString::strtolower(Locale::translate('search.operator.and'));
+		$orOperator = OjsString::strtolower(Locale::translate('search.operator.or'));
 		while ($pos < $total) {
 			if (!empty($signTokens[$pos])) $sign = $signTokens[$pos];
 			else if (empty($sign)) $sign = '+';
-			$token = String::strtolower($tokens[$pos++]);
+			$token = OjsString::strtolower($tokens[$pos++]);
 			switch ($token) {
 				case $notOperator:
 					$sign = '-';
@@ -73,7 +73,7 @@ class ArticleSearch {
 				default:
 					$postBool = '';
 					if ($pos < $total) {
-						$peek = String::strtolower($tokens[$pos]);
+						$peek = OjsString::strtolower($tokens[$pos]);
 						if ($peek == $orOperator) {
 							$postBool = 'or';
 							$pos++;

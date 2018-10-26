@@ -110,7 +110,7 @@ class ArticleReportPlugin extends ReportPlugin {
 		));
 
 		$fp = fopen('php://output', 'wt');
-		String::fputcsv($fp, array_values($columns));
+		OjsString::fputcsv($fp, array_values($columns));
 
 		import('classes.article.Article'); // Bring in getStatusMap function
 		$statusMap =& Article::getStatusMap();
@@ -141,7 +141,7 @@ class ArticleReportPlugin extends ReportPlugin {
 					} else $columns[$index] = '';
 				}
 			}
-			String::fputcsv($fp, $columns);
+			OjsString::fputcsv($fp, $columns);
 			unset($row);
 			$authorIndex++;
 		}

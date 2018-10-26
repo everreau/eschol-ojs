@@ -346,7 +346,7 @@ class TinyMCEPlugin extends GenericPlugin {
 			$allLocales = Locale::getAllLocales();
 			$localeList = array();
 			foreach ($allLocales as $key => $locale) {
-				$localeList[] = String::substr($key, 0, 2);
+				$localeList[] = OjsString::substr($key, 0, 2);
 			}
 			
 			//
@@ -371,7 +371,7 @@ class TinyMCEPlugin extends GenericPlugin {
 					entity_encoding : "raw",
 					plugins : "paste,ibrowser,fullscreen",
 					mode : "exact",
-					language : "' . String::substr(Locale::getLocale(), 0, 2) . '",
+					language : "' . OjsString::substr(Locale::getLocale(), 0, 2) . '",
 					elements : "' . $enableFields . '",
 					relative_urls : false,
 					forced_root_block : false,
@@ -401,7 +401,7 @@ class TinyMCEPlugin extends GenericPlugin {
 					entity_encoding : "raw",
 					plugins : "paste,fullscreen",
 					mode : "exact",
-					language : "' . String::substr(Locale::getLocale(), 0, 2) . '",
+					language : "' . OjsString::substr(Locale::getLocale(), 0, 2) . '",
 					elements : "' . $enableFields . '",
 					relative_urls : false,
 					forced_root_block : false,

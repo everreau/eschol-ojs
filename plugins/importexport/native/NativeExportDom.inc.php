@@ -78,7 +78,7 @@ class NativeExportDom {
 					$imageData = $embedFiles ? $publicFileManager->readFile($coverPagePath) : '';
 					$embedNode =& NativeExportDom::createEmbedElement($doc, $imageNode, $embedFiles, $imageData, $coverPagePath);
 					XMLCustomWriter::setAttribute($embedNode, 'filename', $issue->getOriginalFileName($locale));
-					XMLCustomWriter::setAttribute($embedNode, 'mime_type', String::mime_content_type($coverPagePath));
+					XMLCustomWriter::setAttribute($embedNode, 'mime_type', OjsString::mime_content_type($coverPagePath));
 				}				
 				
 				unset($coverNode);
@@ -397,7 +397,7 @@ class NativeExportDom {
 					$imageData = $embedFiles ? $publicFileManager->readFile($coverPagePath) : '';
 					$embedNode =& NativeExportDom::createEmbedElement($doc, $imageNode, $embedFiles, $imageData, $coverPagePath);
 					XMLCustomWriter::setAttribute($embedNode, 'filename', $article->getOriginalFileName($locale));
-					XMLCustomWriter::setAttribute($embedNode, 'mime_type', String::mime_content_type($coverPagePath));
+					XMLCustomWriter::setAttribute($embedNode, 'mime_type', OjsString::mime_content_type($coverPagePath));
 				}				
 				
 				unset($coverNode);

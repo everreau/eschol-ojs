@@ -275,9 +275,9 @@ class Validation {
 	 * @return string
 	 */
 	function suggestUsername($firstName, $lastName) {
-		$initial = String::substr($firstName, 0, 1);
+		$initial = OjsString::substr($firstName, 0, 1);
 
-		$suggestion = String::regexp_replace('/[^a-zA-Z0-9_-]/', '', String::strtolower($initial . $lastName));
+		$suggestion = OjsString::regexp_replace('/[^a-zA-Z0-9_-]/', '', OjsString::strtolower($initial . $lastName));
 		$userDao =& DAORegistry::getDAO('UserDAO');
 		for ($i = ''; $userDao->userExistsByUsername($suggestion . $i); $i++);
 		return $suggestion . $i;

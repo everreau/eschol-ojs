@@ -280,19 +280,19 @@ class PublishedArticle extends Article {
 			case 'pattern':
 				$suffixPattern = $journal->getSetting('doiSuffixPattern');
 				// %j - journal initials
-				$suffixPattern = String::regexp_replace('/%j/', String::strtolower($journal->getLocalizedSetting('initials')), $suffixPattern);
+				$suffixPattern = OjsString::regexp_replace('/%j/', OjsString::strtolower($journal->getLocalizedSetting('initials')), $suffixPattern);
 				// %v - volume number
-				$suffixPattern = String::regexp_replace('/%v/', $issue->getVolume(), $suffixPattern);
+				$suffixPattern = OjsString::regexp_replace('/%v/', $issue->getVolume(), $suffixPattern);
 				// %i - issue number
-				$suffixPattern = String::regexp_replace('/%i/', $issue->getNumber(), $suffixPattern);
+				$suffixPattern = OjsString::regexp_replace('/%i/', $issue->getNumber(), $suffixPattern);
 				// %a - article id
-				$suffixPattern = String::regexp_replace('/%a/', $this->getArticleId(), $suffixPattern);
+				$suffixPattern = OjsString::regexp_replace('/%a/', $this->getArticleId(), $suffixPattern);
 				// %p - page number
-				$suffixPattern = String::regexp_replace('/%p/', $this->getPages(), $suffixPattern);
+				$suffixPattern = OjsString::regexp_replace('/%p/', $this->getPages(), $suffixPattern);
 				$doi = $doiPrefix . '/' . $suffixPattern;
 				break;
 			default:
-				$doi = $doiPrefix . '/' . String::strtolower($journal->getLocalizedSetting('initials')) . '.v' . $issue->getVolume() . 'i' . $issue->getNumber() . '.' . $this->getArticleId();
+				$doi = $doiPrefix . '/' . OjsString::strtolower($journal->getLocalizedSetting('initials')) . '.v' . $issue->getVolume() . 'i' . $issue->getNumber() . '.' . $this->getArticleId();
 		}
 
 		if (!$preview) {

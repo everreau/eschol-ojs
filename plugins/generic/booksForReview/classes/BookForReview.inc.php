@@ -356,10 +356,10 @@ class BookForReview extends DataObject {
 	 */
 	function getLocalizedDescriptionShort() {
 		$end ='';
-		if (String::strlen($this->getLocalizedData('description'))) {
+		if (OjsString::strlen($this->getLocalizedData('description'))) {
 			$end = ' ...';
 		}
-		return String::substr($this->getLocalizedData('description'), 0, 250) . $end;
+		return OjsString::substr($this->getLocalizedData('description'), 0, 250) . $end;
 	}
 
 	/**

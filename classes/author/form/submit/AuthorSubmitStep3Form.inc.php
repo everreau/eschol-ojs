@@ -29,10 +29,10 @@ class AuthorSubmitStep3Form extends AuthorSubmitForm {
 		$this->addCheck(new FormValidatorArray($this, 'authors', 'required', 'author.submit.form.authorRequiredFields', array('firstName', 'lastName')));
 		// if corporate author, require last name only
 		// 20120123 BLH Removing email requirement for form
-		//$this->addCheck(new FormValidatorArrayCustom($this, 'authors', 'required', 'author.submit.form.authorRequiredFields', create_function('$email, $regExp', 'return String::regexp_match($regExp, $email);'), array(ValidatorEmail::getRegexp()), false, array('email')));
+		//$this->addCheck(new FormValidatorArrayCustom($this, 'authors', 'required', 'author.submit.form.authorRequiredFields', create_function('$email, $regExp', 'return OjsString::regexp_match($regExp, $email);'), array(ValidatorEmail::getRegexp()), false, array('email')));
 		// 20120123 BLH adding valid email format check
-		$this->addCheck(new FormValidatorArrayCustom($this, 'authors', 'required', 'user.profile.form.emailInvalid', create_function('$email, $regExp', 'return empty($email) ? true : String::regexp_match($regExp, $email);'), array(ValidatorEmail::getRegexp()), false, array('email')));
-		$this->addCheck(new FormValidatorArrayCustom($this, 'authors', 'required', 'user.profile.form.urlInvalid', create_function('$url, $regExp', 'return empty($url) ? true : String::regexp_match($regExp, $url);'), array(ValidatorUrl::getRegexp()), false, array('url')));
+		$this->addCheck(new FormValidatorArrayCustom($this, 'authors', 'required', 'user.profile.form.emailInvalid', create_function('$email, $regExp', 'return empty($email) ? true : OjsString::regexp_match($regExp, $email);'), array(ValidatorEmail::getRegexp()), false, array('email')));
+		$this->addCheck(new FormValidatorArrayCustom($this, 'authors', 'required', 'user.profile.form.urlInvalid', create_function('$url, $regExp', 'return empty($url) ? true : OjsString::regexp_match($regExp, $url);'), array(ValidatorUrl::getRegexp()), false, array('url')));
 		$this->addCheck(new FormValidatorLocale($this, 'title', 'required', 'author.submit.form.titleRequired', $this->getRequiredLocale()));
 		$this->addCheck(new FormValidatorLocale($this, 'discipline', 'required', 'author.submit.form.disciplineRequired', $this->getRequiredLocale()));
 

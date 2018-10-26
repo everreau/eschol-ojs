@@ -222,7 +222,7 @@ class CommentHandler extends Handler {
 				Request::url(null, 'article', 'view', array(
 					$article->getBestArticleId(Request::getJournal()), $galleyId
 				)),
-				String::stripUnsafeHtml($article->getLocalizedTitle()),
+				OjsString::stripUnsafeHtml($article->getLocalizedTitle()),
 				true
 			)
 		);
