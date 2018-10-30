@@ -65,7 +65,7 @@ class BooksForReviewReminder extends ScheduledTask {
 			if (checkPhpVersion('5.0.0')) {
 				$bfrAuthorDao = new BookForReviewAuthorDAO('booksforreviewplugin');
 			} else {
-				$bfrAuthorDao =& new BookForReviewAuthorDAO('booksforreviewplugin');
+				$bfrAuthorDao = new BookForReviewAuthorDAO('booksforreviewplugin');
 			}
 			$returner =& DAORegistry::registerDAO('BookForReviewAuthorDAO', $bfrAuthorDao);
 
@@ -74,7 +74,7 @@ class BooksForReviewReminder extends ScheduledTask {
 			if (checkPhpVersion('5.0.0')) {
 				$bfrDao = new BookForReviewDAO('booksforreviewplugin');
 			} else {
-				$bfrDao =& new BookForReviewDAO('booksforreviewplugin');
+				$bfrDao = new BookForReviewDAO('booksforreviewplugin');
 			}
 			$returner =& DAORegistry::registerDAO('BookForReviewDAO', $bfrDao);
 

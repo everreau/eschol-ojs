@@ -142,7 +142,7 @@ class IssueManagementHandler extends EditorHandler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$issueForm = new IssueForm('editor/issues/createIssue.tpl');
 		} else {
-			$issueForm =& new IssueForm('editor/issues/createIssue.tpl');
+			$issueForm = new IssueForm('editor/issues/createIssue.tpl');
 		}
 
 		if ($issueForm->isLocaleResubmit()) {
@@ -166,7 +166,7 @@ class IssueManagementHandler extends EditorHandler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$issueForm = new IssueForm('editor/issues/createIssue.tpl');
 		} else {
-			$issueForm =& new IssueForm('editor/issues/createIssue.tpl');
+			$issueForm = new IssueForm('editor/issues/createIssue.tpl');
 		}
 
 		$issueForm->readInputData();
@@ -203,7 +203,7 @@ class IssueManagementHandler extends EditorHandler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$issueForm = new IssueForm('editor/issues/issueData.tpl');
 		} else {
-			$issueForm =& new IssueForm('editor/issues/issueData.tpl');
+			$issueForm = new IssueForm('editor/issues/issueData.tpl');
 		}
 
 		if ($issueForm->isLocaleResubmit()) {
@@ -244,7 +244,7 @@ class IssueManagementHandler extends EditorHandler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$issueForm = new IssueForm('editor/issues/issueData.tpl');
 		} else {
-			$issueForm =& new IssueForm('editor/issues/issueData.tpl');
+			$issueForm = new IssueForm('editor/issues/issueData.tpl');
 		}
 		$issueForm->readInputData();
 

@@ -86,7 +86,7 @@ class ProfileHandler extends UserHandler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$passwordForm = new ChangePasswordForm();
 		} else {
-			$passwordForm =& new ChangePasswordForm();
+			$passwordForm = new ChangePasswordForm();
 		}
 		$passwordForm->initData();
 		$passwordForm->display();
@@ -103,7 +103,7 @@ class ProfileHandler extends UserHandler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$passwordForm = new ChangePasswordForm();
 		} else {
-			$passwordForm =& new ChangePasswordForm();
+			$passwordForm = new ChangePasswordForm();
 		}
 		$passwordForm->readInputData();
 

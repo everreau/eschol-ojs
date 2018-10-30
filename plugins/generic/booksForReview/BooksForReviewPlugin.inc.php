@@ -37,7 +37,7 @@ class BooksForReviewPlugin extends GenericPlugin {
 			if (checkPhpVersion('5.0.0')) {
 				$bfrAuthorDao = new BookForReviewAuthorDAO($this->getName());
 			} else {
-				$bfrAuthorDao =& new BookForReviewAuthorDAO($this->getName());
+				$bfrAuthorDao = new BookForReviewAuthorDAO($this->getName());
 			}
 			$returner =& DAORegistry::registerDAO('BookForReviewAuthorDAO', $bfrAuthorDao);
 
@@ -45,7 +45,7 @@ class BooksForReviewPlugin extends GenericPlugin {
 			if (checkPhpVersion('5.0.0')) {
 				$bfrDao = new BookForReviewDAO($this->getName());
 			} else {
-				$bfrDao =& new BookForReviewDAO($this->getName());
+				$bfrDao = new BookForReviewDAO($this->getName());
 			}
 			$returner =& DAORegistry::registerDAO('BookForReviewDAO', $bfrDao);
 

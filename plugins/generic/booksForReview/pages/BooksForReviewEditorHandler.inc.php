@@ -166,7 +166,7 @@ class BooksForReviewEditorHandler extends Handler {
 			if (checkPhpVersion('5.0.0')) {
 				$bfrForm = new BookForReviewForm(BOOKS_FOR_REVIEW_PLUGIN_NAME, $bookId);
 			} else {
-				$bfrForm =& new BookForReviewForm(BOOKS_FOR_REVIEW_PLUGIN_NAME, $bookId);
+				$bfrForm = new BookForReviewForm(BOOKS_FOR_REVIEW_PLUGIN_NAME, $bookId);
 			}
 			$bfrForm->initData();
 			$templateMgr =& TemplateManager::getManager();
@@ -210,7 +210,7 @@ class BooksForReviewEditorHandler extends Handler {
 			if (checkPhpVersion('5.0.0')) {
 				$bfrForm = new BookForReviewForm(BOOKS_FOR_REVIEW_PLUGIN_NAME, $bookId);
 			} else {
-				$bfrForm =& new BookForReviewForm(BOOKS_FOR_REVIEW_PLUGIN_NAME, $bookId);
+				$bfrForm = new BookForReviewForm(BOOKS_FOR_REVIEW_PLUGIN_NAME, $bookId);
 			}
 			$bfrForm->readInputData();
 
@@ -343,7 +343,7 @@ class BooksForReviewEditorHandler extends Handler {
 		if (checkPhpVersion('5.0.0')) {
 			$form = new BooksForReviewSettingsForm($bfrPlugin, $journalId);
 		} else {
-			$form =& new BooksForReviewSettingsForm($bfrPlugin, $journalId);
+			$form = new BooksForReviewSettingsForm($bfrPlugin, $journalId);
 		}
 
 		if (Config::getVar('general', 'scheduled_tasks')) {

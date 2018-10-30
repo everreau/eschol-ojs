@@ -508,7 +508,7 @@ class PeopleHandler extends ManagerHandler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$userForm = new UserManagementForm($userId);
 		} else {
-			$userForm =& new UserManagementForm($userId);
+			$userForm = new UserManagementForm($userId);
 		}
 
 		if ($userForm->isLocaleResubmit()) {
@@ -742,7 +742,7 @@ class PeopleHandler extends ManagerHandler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$userForm = new UserManagementForm($userId);
 		} else {
-			$userForm =& new UserManagementForm($userId);
+			$userForm = new UserManagementForm($userId);
 		}
 
 		$userForm->readInputData();
@@ -758,7 +758,7 @@ class PeopleHandler extends ManagerHandler {
 				if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 					$userForm = new UserManagementForm();
 				} else {
-					$userForm =& new UserManagementForm();
+					$userForm = new UserManagementForm();
 				}
 				$userForm->initData($args, $request);
 				$userForm->display();

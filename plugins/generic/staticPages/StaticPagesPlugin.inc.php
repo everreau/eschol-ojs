@@ -47,7 +47,7 @@ class StaticPagesPlugin extends GenericPlugin {
 				if (checkPhpVersion('5.0.0')) { // WARNING: see http://pkp.sfu.ca/wiki/index.php/Information_for_Developers#Use_of_.24this_in_the_constructor
 					$staticPagesDAO = new StaticPagesDAO($this->getName());
 				} else {
-					$staticPagesDAO =& new StaticPagesDAO($this->getName());
+					$staticPagesDAO = new StaticPagesDAO($this->getName());
 				}
 				$returner =& DAORegistry::registerDAO('StaticPagesDAO', $staticPagesDAO);
 

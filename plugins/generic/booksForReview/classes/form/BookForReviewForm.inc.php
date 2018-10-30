@@ -316,7 +316,7 @@ class BookForReviewForm extends Form {
 				if (checkPhpVersion('5.0.0')) {
 					$author = new BookForReviewAuthor();
 				} else {
-					$author =& new BookForReviewAuthor();
+					$author = new BookForReviewAuthor();
 				}
 				$isExistingAuthor = false;
 			}
