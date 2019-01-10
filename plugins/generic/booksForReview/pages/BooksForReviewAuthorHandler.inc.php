@@ -133,7 +133,7 @@ class BooksForReviewAuthorHandler extends Handler {
 						$paramArray = array(
 							'editorName' => strip_tags($editorFullName),
 							'bookForReviewTitle' => '"' . strip_tags($book->getLocalizedTitle()) . '"',
-							'authorContactSignature' => String::html2text($user->getContactSignature())
+							'authorContactSignature' => OjsString::html2text($user->getContactSignature())
 						);
 
 						$email->addRecipient($editorEmail, $editorFullName);

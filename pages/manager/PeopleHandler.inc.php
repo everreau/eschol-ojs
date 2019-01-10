@@ -46,7 +46,7 @@ class PeopleHandler extends ManagerHandler {
 		$sort = isset($sort) ? $sort : 'name';
 		$sortDirection = Request::getUserVar('sortDirection');
 
-		if ($roleSymbolic != 'all' && String::regexp_match_get('/^(\w+)s$/', $roleSymbolic, $matches)) {
+		if ($roleSymbolic != 'all' && OjsString::regexp_match_get('/^(\w+)s$/', $roleSymbolic, $matches)) {
 			$roleId = $roleDao->getRoleIdFromPath($matches[1]);
 			if ($roleId == null) {
 				Request::redirect(null, null, null, 'all');
@@ -70,7 +70,7 @@ class PeopleHandler extends ManagerHandler {
 			$searchMatch = Request::getUserVar('searchMatch');
 
 		} elseif (!empty($searchInitial)) {
-			$searchInitial = String::strtoupper($searchInitial);
+			$searchInitial = OjsString::strtoupper($searchInitial);
 			$searchType = USER_FIELD_INITIAL;
 			$search = $searchInitial;
 		}
@@ -196,7 +196,7 @@ class PeopleHandler extends ManagerHandler {
 			$searchMatch = Request::getUserVar('searchMatch');
 
 		} elseif (!empty($searchInitial)) {
-			$searchInitial = String::strtoupper($searchInitial);
+			$searchInitial = OjsString::strtoupper($searchInitial);
 			$searchType = USER_FIELD_INITIAL;
 			$search = $searchInitial;
 		}
@@ -508,7 +508,7 @@ class PeopleHandler extends ManagerHandler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$userForm = new UserManagementForm($userId);
 		} else {
-			$userForm =& new UserManagementForm($userId);
+			$userForm = new UserManagementForm($userId);
 		}
 
 		if ($userForm->isLocaleResubmit()) {
@@ -565,7 +565,7 @@ class PeopleHandler extends ManagerHandler {
 		if (Request::getUserVar('roleSymbolic')!=null) $roleSymbolic = Request::getUserVar('roleSymbolic');
 		else $roleSymbolic = isset($args[0])?$args[0]:'all';
 
-		if ($roleSymbolic != 'all' && String::regexp_match_get('/^(\w+)s$/', $roleSymbolic, $matches)) {
+		if ($roleSymbolic != 'all' && OjsString::regexp_match_get('/^(\w+)s$/', $roleSymbolic, $matches)) {
 			$roleId = $roleDao->getRoleIdFromPath($matches[1]);
 			if ($roleId == null) {
 				Request::redirect(null, null, null, 'all');
@@ -589,7 +589,7 @@ class PeopleHandler extends ManagerHandler {
 			$searchMatch = Request::getUserVar('searchMatch');
 
 		} else if (!empty($searchInitial)) {
-			$searchInitial = String::strtoupper($searchInitial);
+			$searchInitial = OjsString::strtoupper($searchInitial);
 			$searchType = USER_FIELD_INITIAL;
 			$search = $searchInitial;
 		}
@@ -742,7 +742,7 @@ class PeopleHandler extends ManagerHandler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$userForm = new UserManagementForm($userId);
 		} else {
-			$userForm =& new UserManagementForm($userId);
+			$userForm = new UserManagementForm($userId);
 		}
 
 		$userForm->readInputData();
@@ -758,7 +758,7 @@ class PeopleHandler extends ManagerHandler {
 				if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 					$userForm = new UserManagementForm();
 				} else {
-					$userForm =& new UserManagementForm();
+					$userForm = new UserManagementForm();
 				}
 				$userForm->initData($args, $request);
 				$userForm->display();

@@ -143,7 +143,7 @@ class CommentForm extends Form {
 			$paramArray = array(
 				'name' => $name,
 				'commentName' => $this->user->getFullName(),
-				'comments' => String::html2text($commentText)
+				'comments' => OjsString::html2text($commentText)
 			);
 
 			$email->sendWithParams($paramArray);

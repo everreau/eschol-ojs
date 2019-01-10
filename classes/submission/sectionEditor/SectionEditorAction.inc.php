@@ -255,7 +255,7 @@ class SectionEditorAction extends Action {
 						'reviewerUsername' => $reviewer->getUsername(),
 						'reviewerPassword' => $reviewer->getPassword(),
 						'editorialContactSignature' => $user->getContactSignature(),
-						'reviewGuidelines' => String::html2text($journal->getLocalizedSetting('reviewGuidelines')),
+						'reviewGuidelines' => OjsString::html2text($journal->getLocalizedSetting('reviewGuidelines')),
 						'submissionReviewUrl' => $submissionUrl,
 						'abstractTermIfEnabled' => ($sectionEditorSubmission->getLocalizedAbstract() == ''?'':Locale::translate('article.abstract')),
 						'passwordResetUrl' => Request::url(null, 'login', 'resetPassword', $reviewer->getUsername(), array('confirm' => Validation::generatePasswordResetHash($reviewer->getId())))
@@ -2064,7 +2064,7 @@ class SectionEditorAction extends Action {
 							if (is_array($articleComments)) {
 								foreach ($articleComments as $comment) {
 									// If the comment is viewable by the author, then add the comment.
-									if ($comment->getViewable()) $body .= String::html2text($comment->getComments()) . "\n\n";
+									if ($comment->getViewable()) $body .= OjsString::html2text($comment->getComments()) . "\n\n";
 								}
 							}
 							$body .= "------------------------------------------------------\n\n";
@@ -2079,7 +2079,7 @@ class SectionEditorAction extends Action {
 								$body .= Locale::translate('submission.comments.importPeerReviews.reviewerLetter', array('reviewerLetter' => chr(ord('A') + $reviewIndexes[$reviewAssignment->getId()]))) . "\n\n";
 							}
 							foreach ($reviewFormElements as $reviewFormElement) if ($reviewFormElement->getIncluded()) {
-								$body .= String::html2text($reviewFormElement->getLocalizedQuestion()) . ": \n";
+								$body .= OjsString::html2text($reviewFormElement->getLocalizedQuestion()) . ": \n";
 								$reviewFormResponse = $reviewFormResponseDao->getReviewFormResponse($reviewId, $reviewFormElement->getId());
 
 								if ($reviewFormResponse) {
@@ -2087,14 +2087,14 @@ class SectionEditorAction extends Action {
 									if (in_array($reviewFormElement->getElementType(), $reviewFormElement->getMultipleResponsesElementTypes())) {
 										if ($reviewFormElement->getElementType() == REVIEW_FORM_ELEMENT_TYPE_CHECKBOXES) {
 											foreach ($reviewFormResponse->getValue() as $value) {
-												$body .= "\t" . String::html2text($possibleResponses[$value-1]['content']) . "\n";
+												$body .= "\t" . OjsString::html2text($possibleResponses[$value-1]['content']) . "\n";
 											}
 										} else {
-											$body .= "\t" . String::html2text($possibleResponses[$reviewFormResponse->getValue()-1]['content']) . "\n";
+											$body .= "\t" . OjsString::html2text($possibleResponses[$reviewFormResponse->getValue()-1]['content']) . "\n";
 										}
 										$body .= "\n";
 									} else {
-										$body .= "\t" . String::html2text($reviewFormResponse->getValue()) . "\n\n";
+										$body .= "\t" . OjsString::html2text($reviewFormResponse->getValue()) . "\n\n";
 									}
 								}
 							}
@@ -2131,7 +2131,7 @@ class SectionEditorAction extends Action {
 
 		$commentsText = "";
 		foreach ($comments as $comment) {
-			$commentsText .= String::html2text($comment->getComments()) . "\n\n";
+			$commentsText .= OjsString::html2text($comment->getComments()) . "\n\n";
 		}
 
 		$user =& Request::getUser();

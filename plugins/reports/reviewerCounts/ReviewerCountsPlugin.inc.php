@@ -78,7 +78,7 @@ class ReviewerCountsPlugin extends ReportPlugin {
 		$yesNoArray = array('declined', 'cancelled');
 
 		$fp = fopen('php://output', 'wt');
-		String::fputcsv($fp, array_values($columns));
+		OjsString::fputcsv($fp, array_values($columns));
 
 		while ($row =& $reviewerIterator->next()) {
 			foreach ($columns as $index => $junk) {
@@ -96,7 +96,7 @@ class ReviewerCountsPlugin extends ReportPlugin {
 					$columns[$index] = $row[$index];
 				}
 			}
-			String::fputcsv($fp, $columns);
+			OjsString::fputcsv($fp, $columns);
 			unset($row);
 		}
 		fclose($fp);

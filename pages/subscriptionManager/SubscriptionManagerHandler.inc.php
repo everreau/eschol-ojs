@@ -336,7 +336,7 @@ class SubscriptionManagerHandler extends Handler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$userForm = new UserManagementForm();
 		} else {
-			$userForm =& new UserManagementForm();
+			$userForm = new UserManagementForm();
 		}
 		if ($userForm->isLocaleResubmit()) {
 			$userForm->readInputData();
@@ -360,7 +360,7 @@ class SubscriptionManagerHandler extends Handler {
 		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 			$userForm = new UserManagementForm();
 		} else {
-			$userForm =& new UserManagementForm();
+			$userForm = new UserManagementForm();
 		}
 		$userForm->readInputData();
 
@@ -375,7 +375,7 @@ class SubscriptionManagerHandler extends Handler {
 				if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
 					$userForm = new UserManagementForm();
 				} else {
-					$userForm =& new UserManagementForm();
+					$userForm = new UserManagementForm();
 				}
 				$userForm->initData();
 				$userForm->display();

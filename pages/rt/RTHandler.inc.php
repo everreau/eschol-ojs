@@ -482,7 +482,7 @@ class RTHandler extends ArticleHandler {
 	 */
 	function getParameterNames($value) {
 		$matches = null;
-		String::regexp_match_all('/\{\$([a-zA-Z0-9]+)\}/', $value, $matches);
+		OjsString::regexp_match_all('/\{\$([a-zA-Z0-9]+)\}/', $value, $matches);
 		// Remove the entire string from the matches list
 		return $matches[1];
 	}
