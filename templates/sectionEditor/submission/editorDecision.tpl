@@ -151,7 +151,7 @@
 			<td width="80%" class="value">
 				{if $lastDecision == SUBMISSION_EDITOR_DECISION_ACCEPT || $lastDecision == SUBMISSION_EDITOR_DECISION_RESUBMIT}<input type="radio" name="editorDecisionFile" value="{$authorFile->getFileId()},{$authorFile->getRevision()}" /> {/if}<a href="{url op="downloadFile" path=$submission->getId()|to_array:$authorFile->getFileId():$authorFile->getRevision()}" class="file">{$authorFile->getFileName()|escape}</a>&nbsp;&nbsp;
 				{$authorFile->getDateModified()|date_format:$dateFormatShort}
-				{if $copyeditFile && $copyeditFile->getSourceFileId() == $authorFile->getFileId() && $copyeditFile->getSourceRevision() == $editorFile->getRevision()}
+				{if $copyeditFile && $copyeditFile->getSourceFileId() == $authorFile->getFileId() && $copyeditFile->getSourceRevision() == $authorFile->getRevision()}
 					&nbsp;&nbsp;&nbsp;&nbsp;{translate key="submission.sentToCopyediting"}&nbsp;&nbsp;{$copyeditFile->getDateUploaded()|date_format:$dateFormatShort}
 				{/if}
 			</td>
