@@ -1,4 +1,4 @@
-<?php
+?php
 
 /**
  * @file classes/help/OJSHelpMappingFile.inc.php
@@ -43,7 +43,7 @@ class OJSHelpMappingFile extends HelpMappingFile {
 
 
 	function getTopicIdForFilename($filename) {
-		$parts = split('/', str_replace('\\', '/', $filename));
+		$parts = preg_split('~/~', str_replace('\\', '/', $filename));
 		array_shift($parts); // Knock off "help"
 		array_shift($parts); // Knock off locale
 		return substr(join('/', $parts), 0, -4); // Knock off .xml
