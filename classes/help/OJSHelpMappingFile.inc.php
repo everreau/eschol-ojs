@@ -1,4 +1,4 @@
-?php
+<?php
 
 /**
  * @file classes/help/OJSHelpMappingFile.inc.php
