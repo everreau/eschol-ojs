@@ -1,9 +1,9 @@
-#!/usr/pkg/bin/python
+#!/apps/eschol/bin/python
 
 import re, os, subprocess, sys, tempfile
 
 fileToModify = sys.argv[1]
-pdfTkCmd = '/usr/pkg/bin/pdftk'
+pdfTkCmd = '/apps/eschol/bin/pdftk'
 
 # Dump the existing metadata to a temp file
 (handle1,temp1) = tempfile.mkstemp('_pdfMeta.in')
