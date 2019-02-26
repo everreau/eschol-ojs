@@ -25,8 +25,8 @@ define('ASSOC_TYPE_ARTICLE',  0x0000101);
 define('CONTEXT_JOURNAL', 1);
 
 class Application extends PKPApplication {
-	function Application() {
-		parent::PKPApplication();
+	function __construct() {
+		parent::__construct();
 	}
 
 	/**
