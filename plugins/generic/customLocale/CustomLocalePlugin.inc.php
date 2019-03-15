@@ -95,8 +95,7 @@ class CustomLocalePlugin extends GenericPlugin {
 		return $smarty->smartyUrl($params, $smarty);
 	}
 
-	function getManagementVerbs() {
-		$verbs = array();
+	function getManagementVerbs($verbs = array()) {
 		if ($this->getEnabled()) {
 			$verbs[] = array('index', Locale::translate('plugins.generic.customLocale.customize'));
 		}

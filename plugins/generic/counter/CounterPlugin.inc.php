@@ -147,9 +147,7 @@ class CounterPlugin extends GenericPlugin {
 		return true;
 	}
 
-	function getManagementVerbs() {
-		$verbs = array();
-
+	function getManagementVerbs($verbs = array()) {
 		if ($this->getEnabled()) {
 			$verbs[] = array('counter', Locale::translate('plugins.generic.counter'));
 

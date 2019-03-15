@@ -185,7 +185,7 @@ class ResolverPlugin extends GatewayPlugin {
 		return $verbs;
 	}
 
-	function manage($verb, $args) {
+	function manage($verb, $args, &$message) {
 		switch ($verb) {
 			case 'exportHoldings':
 				if (Validation::isSiteAdmin() && $this->getEnabled()) {

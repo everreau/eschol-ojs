@@ -102,7 +102,7 @@ class ReportPlugin extends Plugin {
 	/**
 	 * Perform management functions
 	 */
-	function manage($verb, $args) {
+	function manage($verb, $args, &$message) {
 		if ($verb === 'reports') {
 			Request::redirect(null, 'manager', 'report', $this->getName());
 		}

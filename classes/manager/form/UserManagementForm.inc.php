@@ -161,7 +161,7 @@ class UserManagementForm extends Form {
 	/**
 	 * Initialize form data from current user profile.
 	 */
-	function initData(&$args, &$request) {
+	function initData() {
 		$interestDao =& DAORegistry::getDAO('InterestDAO');
 		if (isset($this->userId)) {
 			$userDao =& DAORegistry::getDAO('UserDAO');
