@@ -20,7 +20,7 @@ class OAIMetadataFormat_MARC extends OAIMetadataFormat {
 	/**
 	 * @see OAIMetadataFormat#toXml
 	 */
-	function toXml(&$record, $format = null) {
+	function toXml($record, $format = null) {
 		$article =& $record->getData('article');
 		$issue =& $record->getData('issue');
 		$journal =& $record->getData('journal');

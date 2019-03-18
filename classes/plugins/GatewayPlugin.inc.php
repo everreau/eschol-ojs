@@ -96,7 +96,7 @@ class GatewayPlugin extends Plugin {
 	/**
 	 * Perform management functions
 	 */
-	function manage($verb, $args) {
+	function manage($verb, $args, &$message) {
 		$templateManager =& TemplateManager::getManager();
 		$templateManager->register_function('plugin_url', array(&$this, 'smartyPluginUrl'));
 		switch ($verb) {

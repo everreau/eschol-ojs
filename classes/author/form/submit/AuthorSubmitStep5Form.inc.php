@@ -96,7 +96,7 @@ class AuthorSubmitStep5Form extends AuthorSubmitForm {
 	/**
 	 * Validate the form
 	 */
-	function validate() {
+	function validate($callHooks = true) {
 		import('classes.payment.ojs.OJSPaymentManager');
 		$paymentManager =& OJSPaymentManager::getManager();
 		if ( $paymentManager->submissionEnabled() ) {

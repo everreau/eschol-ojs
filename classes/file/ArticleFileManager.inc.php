@@ -229,8 +229,8 @@ class ArticleFileManager extends FileManager {
 	 * @param $output boolean output the file's contents instead of returning a string
 	 * @return boolean
 	 */
-	function readFile($fileId, $revision = null, $output = false) {
-		$articleFile =& $this->getFile($fileId, $revision);
+	function readFile($fileId, $output = false) {
+		$articleFile =& $this->getFile($fileId);
 
 		if (isset($articleFile)) {
 			$fileType = $articleFile->getFileType();

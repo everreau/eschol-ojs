@@ -81,7 +81,7 @@ class Author extends PKPAuthor {
 	 * Get author suffix (added for eScholarship).
 	 * @return string
 	 */
-	function getEscholSuffix() {
+	function getEscholSuffix($locale) {
 		return $this->getData('eschol_suffix');
 	}
 	
@@ -89,7 +89,7 @@ class Author extends PKPAuthor {
 	 * Get author organization (added for eScholarship).
 	 * @return string
 	 */
-	function getEscholOrganization() {
+	function getEscholOrganization($locale) {
 		return $this->getData('eschol_organization');
 	}	
 	// 20111020 BLH End Add

@@ -21,7 +21,7 @@ class OAIMetadataFormat_DC extends OAIMetadataFormat {
 	/**
 	 * @see OAIMetadataFormat#toXML
 	 */
-	function toXml(&$record, $format = null) {
+	function toXml($record, $format = null) {
         $response = null;
         if (!HookRegistry::call('OAIMetadataFormat_DC::toXml', array(&$this, $record, &$response))) {
 			$article =& $record->getData('article');

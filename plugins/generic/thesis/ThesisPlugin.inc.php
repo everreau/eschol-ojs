@@ -118,8 +118,7 @@ class ThesisPlugin extends GenericPlugin {
 	/**
 	 * Display verbs for the management interface.
 	 */
-	function getManagementVerbs() {
-		$verbs = array();
+	function getManagementVerbs($verbs = array()) {
 		if ($this->getEnabled()) {
 			$verbs[] = array('theses', Locale::translate('plugins.generic.thesis.manager.theses'));
 			$verbs[] = array('settings', Locale::translate('plugins.generic.thesis.manager.settings'));

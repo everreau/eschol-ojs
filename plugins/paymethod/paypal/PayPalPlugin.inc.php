@@ -107,7 +107,7 @@ class PayPalPlugin extends PaymethodPlugin {
 	 * @param $queuedPaymentId int
 	 * @param $queuedPayment QueuedPayment
 	 */
-	function displayPaymentForm($queuedPaymentId, &$queuedPayment) {
+	function displayPaymentForm($queuedPaymentId, $key, &$queuedPayment) {
 		if (!$this->isConfigured()) return false;
 		$journal =& Request::getJournal();
 		$user =& Request::getUser();

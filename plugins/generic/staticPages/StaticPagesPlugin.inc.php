@@ -79,8 +79,7 @@ class StaticPagesPlugin extends GenericPlugin {
 	/**
 	 * Display verbs for the management interface.
 	 */
-	function getManagementVerbs() {
-		$verbs = array();
+	function getManagementVerbs($verbs = array()) {
 		if ($this->getEnabled()) {
 			if ($this->isTinyMCEInstalled()) {
 				$verbs[] = array('settings', Locale::translate('plugins.generic.staticPages.editAddContent'));
