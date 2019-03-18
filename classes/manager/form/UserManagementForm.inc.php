@@ -63,7 +63,7 @@ class UserManagementForm extends Form {
 	/**
 	 * Display the form.
 	 */
-	function display() {
+	function display($request = NULL, $template = NULL) {
 		$userDao =& DAORegistry::getDAO('UserDAO');
 		$templateMgr =& TemplateManager::getManager();
 		$site =& Request::getSite();

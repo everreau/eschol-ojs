@@ -59,7 +59,7 @@ class ArticleGalleyForm extends Form {
 	/**
 	 * Display the form.
 	 */
-	function display() {
+	function display($request = NULL, $template = NULL) {
 		$journal =& Request::getJournal();
 		$templateMgr =& TemplateManager::getManager();
 
@@ -78,7 +78,7 @@ class ArticleGalleyForm extends Form {
 	/**
 	 * Validate the form
 	 */
-	function validate() {
+	function validate($callHooks = true) {
 		// check if public galley ID has already used
 		$journal =& Request::getJournal();
 		$galleyDao =& DAORegistry::getDAO('ArticleGalleyDAO');
