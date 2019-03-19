@@ -24,8 +24,10 @@ class ManagerHandler extends Handler {
 	function ManagerHandler() {
 		parent::Handler();
 		
-		$this->addCheck(new HandlerValidatorJournal($this));
-		$this->addCheck(new HandlerValidatorRoles($this, true, null, null, array(ROLE_ID_SITE_ADMIN, ROLE_ID_JOURNAL_MANAGER)));
+		$hvj = new HandlerValidatorJournal($this);
+		$this->addCheck($hvj);
+		$hvr = new HandlerValidatorRoles($this, true, null, null, array(ROLE_ID_SITE_ADMIN, ROLE_ID_JOURNAL_MANAGER));
+		$this->addCheck($hvr);
 	}
 	/**
 	 * Display journal management index page.

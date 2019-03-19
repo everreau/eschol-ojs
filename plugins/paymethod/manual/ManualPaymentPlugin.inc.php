@@ -56,7 +56,7 @@ class ManualPaymentPlugin extends PaymethodPlugin {
 		return true;
 	}
 
-	function displayPaymentForm($queuedPaymentId, &$queuedPayment) {
+	function displayPaymentForm($queuedPaymentId, $key, &$queuedPayment) {
 		if (!$this->isConfigured()) return false;
 		$journal =& Request::getJournal();
 		Locale::requireComponents(array(LOCALE_COMPONENT_APPLICATION_COMMON));

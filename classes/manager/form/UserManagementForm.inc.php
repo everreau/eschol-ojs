@@ -63,7 +63,7 @@ class UserManagementForm extends Form {
 	/**
 	 * Display the form.
 	 */
-	function display() {
+	function display($request = NULL, $template = NULL) {
 		$userDao =& DAORegistry::getDAO('UserDAO');
 		$templateMgr =& TemplateManager::getManager();
 		$site =& Request::getSite();
@@ -161,7 +161,7 @@ class UserManagementForm extends Form {
 	/**
 	 * Initialize form data from current user profile.
 	 */
-	function initData(&$args, &$request) {
+	function initData() {
 		$interestDao =& DAORegistry::getDAO('InterestDAO');
 		if (isset($this->userId)) {
 			$userDao =& DAORegistry::getDAO('UserDAO');

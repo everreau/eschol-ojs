@@ -102,7 +102,7 @@ class CustomThemePlugin extends ThemePlugin {
 		return $smarty->smartyUrl($params, $smarty);
 	}
 
-	function manage($verb) {
+	function manage($verb, $args, &$message) {
 		if ($verb != 'settings') return false;
 
 		$journal =& Request::getJournal();

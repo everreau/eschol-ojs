@@ -45,7 +45,7 @@ class IssueForm extends Form {
 	/**
 	 * Display the form.
 	 */
-	function display() {
+	function display($request = NULL, $template = NULL) {
 		$templateMgr =& TemplateManager::getManager();
 		$journal =& Request::getJournal();
 

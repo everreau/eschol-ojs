@@ -244,7 +244,7 @@ class AuthPlugin extends Plugin {
 		);
 	}
 
-	function manage($verb, $args) {
+	function manage($verb, $args, &$message) {
 		if ($verb === 'authSources') {
 			Request::redirect('index', 'admin', 'auth');
 		}
