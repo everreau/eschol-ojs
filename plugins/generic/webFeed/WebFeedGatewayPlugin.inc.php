@@ -99,7 +99,7 @@ class WebFeedGatewayPlugin extends GatewayPlugin {
 	/**
 	 * Handle fetch requests for this plugin.
 	 */
-	function fetch($args) {
+	function fetch($args, $request) {
 		// Make sure we're within a Journal context
 		$journal =& Request::getJournal();
 		if (!$journal) return false;

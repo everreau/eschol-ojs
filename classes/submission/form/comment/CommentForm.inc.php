@@ -70,7 +70,7 @@ class CommentForm extends Form {
 	/**
 	 * Display the form.
 	 */
-	function display() {
+	function display($request = NULL, $template = NULL) {
 		$article = $this->article;
 
 		$articleCommentDao =& DAORegistry::getDAO('ArticleCommentDAO');

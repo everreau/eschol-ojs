@@ -96,8 +96,7 @@ class AnnouncementFeedPlugin extends GenericPlugin {
 	/**
 	 * Display verbs for the management interface.
 	 */
-	function getManagementVerbs() {
-		$verbs = array();
+	function getManagementVerbs($verbs = array()) {
 		if ($this->getEnabled()) {
 			$verbs[] = array('settings', Locale::translate('plugins.generic.announcementfeed.settings'));
 		}

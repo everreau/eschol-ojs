@@ -58,7 +58,7 @@ class METSGatewayPlugin extends GatewayPlugin {
 		return $verbs;
 	}
 
-	function manage($verb, $args) {
+	function manage($verb, $args, &$message) {
 		if (parent::manage($verb, $args)) return true;
 		if (!$this->getEnabled()) return false;
 		switch ($verb) {

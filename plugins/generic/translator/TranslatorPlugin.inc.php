@@ -56,7 +56,7 @@ class TranslatorPlugin extends GenericPlugin {
 		return true;
 	}
 
-	function getManagementVerbs() {
+	function getManagementVerbs($verbs = array()) {
 		$verbs = array();
 		if ($this->getEnabled()) {
 			$verbs[] = array('translate', Locale::translate('plugins.generic.translator.translate'));

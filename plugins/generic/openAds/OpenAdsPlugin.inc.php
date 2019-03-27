@@ -166,8 +166,7 @@ class OpenAdsPlugin extends GenericPlugin {
 	/**
 	 * Display verbs for the management interface.
 	 */
-	function getManagementVerbs() {
-		$verbs = array();
+	function getManagementVerbs($verbs = array()) {
 		if ($this->getEnabled()) {
 			$verbs[] = array('disable', Locale::translate('common.disable'));
 			if ($this->isConfigured()) {

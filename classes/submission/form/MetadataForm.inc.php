@@ -182,7 +182,7 @@ class MetadataForm extends Form {
 	/**
 	 * Display the form.
 	 */
-	function display() {
+	function display($request = NULL, $template = NULL) {
 		$journal =& Request::getJournal();
 		$settingsDao =& DAORegistry::getDAO('JournalSettingsDAO');
 		$roleDao =& DAORegistry::getDAO('RoleDAO');
@@ -264,7 +264,7 @@ class MetadataForm extends Form {
 	/**
 	 * Check to ensure that the form is correctly validated.
 	 */
-	function validate() {
+	function validate($callHooks = true) {
 		// Verify that an image cover, if supplied, is actually an image.
 		import('classes.file.PublicFileManager');
 		$publicFileManager = new PublicFileManager();

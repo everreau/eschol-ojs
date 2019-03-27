@@ -70,7 +70,7 @@ class ArticleMailTemplate extends MailTemplate {
 	/**
 	 * @see parent::send()
 	 */
-	function send() {
+	function send($clearAttachments = true) {
 		if (parent::send(false)) {
 			if (!isset($this->skip) || !$this->skip) $this->log();
 			$user =& Request::getUser();

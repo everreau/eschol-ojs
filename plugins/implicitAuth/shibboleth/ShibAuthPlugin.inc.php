@@ -42,7 +42,7 @@ class ShibAuthPlugin extends ImplicitAuthPlugin {
 	
 	// Log a user in after they have been authenticated via Shibboleth
 	
-	function implicitAuth($hookname, $args) {	
+	function implicitAuth() {
 	
 			// Set retuser to point to the user that was passed by reference
 			
