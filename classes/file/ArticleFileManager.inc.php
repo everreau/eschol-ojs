@@ -451,7 +451,7 @@ class ArticleFileManager extends FileManager {
 		}
 
 		//create PDF file
-		$libreOffice = "/usr/pkg/bin/soffice";
+		$libreOffice = "/apps/eschol/bin/soffice";
 		$convertCmd = "$libreOffice --headless --convert-to pdf --outdir $outdir $origFilePath >> /apps/eschol/ojs/logs/pdf_conversion.log";
 		passthru($convertCmd,$return);
 
@@ -461,7 +461,7 @@ class ArticleFileManager extends FileManager {
 			// strip out the PDF metadata for non-galley (e.g. review) PDFs
 			if(!$isGalley) {
 				$stripPdfMeta = "/apps/eschol/apache/htdocs/ojs/eschol/utilities/stripPdfMeta.py";
-				$stripCmd = "LD_LIBRARY_PATH=/usr/pkg/lib $stripPdfMeta $pdfFilepath >> /apps/eschol/ojs/logs/pdf_strip.log";
+				$stripCmd = "$stripPdfMeta $pdfFilepath >> /apps/eschol/ojs/logs/pdf_strip.log";
 				passthru($stripCmd,$return);
 			}
 			else {
