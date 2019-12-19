@@ -810,7 +810,7 @@ class IssueManagementHandler extends EditorHandler {
                          //break;uncomment once I've figured out why I'm not getting the ARK
 					 }
 					 else{
-					     $escholURL = preg_replace("~ark:13030\/qt~","https://escholarship.org/uc/item/",$qualifiedArk);
+					     $escholURL = preg_replace("~^qt~","https://escholarship.org/uc/item/",$qualifiedArk);
 						 error_log("For ARTICLE ID $singleArticleID eSchol URL is:" . $escholURL);				 
 					 }
 					 $articleDOI = $article->getDOI();
