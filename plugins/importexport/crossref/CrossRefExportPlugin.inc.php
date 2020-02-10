@@ -256,7 +256,7 @@ class CrossRefExportPlugin extends ImportExportPlugin {
 			
             if (!empty($articleID)){
                 //check first to see if an ARK has already been assigned			
-		        $rawQualifiedArk = shell_exec('sqlite3 /apps/eschol/subi/xtf-erep/control/db/arks.db "select id from arks where external_id=' .$articleID. '"');
+		        $rawQualifiedArk = shell_exec('mysql --defaults-extra-file=/apps/eschol/.passwords/jschol_dba_pw.mysql --skip-column-names --silent -e "select id from arks where source = \'ojs\' AND external_id='.$articleID. '"');
                 $qualifiedArk = trim($rawQualifiedArk);
                 //No ARK exists, so assign one now                 
 		        if (!$qualifiedArk){                
@@ -269,7 +269,7 @@ class CrossRefExportPlugin extends ImportExportPlugin {
                          throw new Exception('Failed to generate an ARK for " . $articleID');
 					 }
 					 else{
-					     $escholURL = preg_replace("~ark:13030\/qt~","https://escholarship.org/uc/item/",$qualifiedArk);
+					     $escholURL = preg_replace("~^(ark:13030\/)?qt~","https://escholarship.org/uc/item/",$qualifiedArk);
 						 error_log("For ARTICLE ID $articleID generated this eSchol URL:" . $escholURL);
                          return $escholURL;						 
 					 }
@@ -277,7 +277,7 @@ class CrossRefExportPlugin extends ImportExportPlugin {
 				//If an ARK already exists, use that
 				else {				
 				   error_log($qualifiedArk . " is the ARK for " . $articleID);
-				   $escholURL = preg_replace("~ark:13030\/qt~","https://escholarship.org/uc/item/",$qualifiedArk);
+				   $escholURL = preg_replace("~^(ark:13030\/)?qt~","https://escholarship.org/uc/item/",$qualifiedArk);
                    error_log("CrossRef Plugin using this eSchol URL:" . 	$escholURL);			   
                    return $escholURL;				   
 				}

@@ -63,18 +63,19 @@ class DOAJExportDom {
                 $eschol_fullArk = '';
 
                 // first try getting ARK from sqlite db
-                $arkdb = new PDO('sqlite:/apps/eschol/erep/xtf/control/db/arks.db');
-                $result = $arkdb->query("select id from arks where source='ojs' and external_id=" . $article->getId());
-                foreach($result as $row) {
-                        $eschol_fullArk = $row['id'];
-                        $eschol_ark = str_replace('ark:13030/qt', '', $eschol_fullArk);
-                }
+		$eschol_fullArk = rtrim(shell_exec('mysql --defaults-extra-file=/apps/eschol/.passwords/jschol_dba_pw.mysql --skip-column-names --silent -e "select id from arks where source = \'ojs\' AND external_id=' .$article->getId(). '"'));
+		#error_log('mysql --defaults-extra-file=/apps/eschol/.passwords/jschol_dba_pw.mysql --skip-column-names --silent -e "select id from arks where source = \'ojs\' AND external_id=' .$article->getId(). '"');
+		error_log($eschol_fullArk . " is the ARK for " . $article->getId());
 
-                // if not found, this article was published before migration to OJS. get ARK from OJS db
-                if ($eschol_fullArk == '') {
+		if ($eschol_fullArk) {
+			$eschol_ark = preg_replace("/^qt/","",$eschol_fullArk);
+			$eschol_fullArk = 'ark:13030/' . $eschol_fullArk;
+		}
+		else {
+                	// if not found, this article was published before migration to OJS. get ARK from OJS db
                         if (is_array($article->getEscholARK(null))) foreach ($article->getEscholARK(null) as $locale => $eschol_ark) {
                                 $eschol_fullArk = 'ark:13030/' . $eschol_ark;
-				$eschol_ark = str_replace('qt', '', $eschol_ark);
+				$eschol_ark = preg_replace("/^qt/", '', $eschol_ark);
                         }
                 }
 

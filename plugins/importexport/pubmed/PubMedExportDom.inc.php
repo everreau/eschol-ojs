@@ -126,18 +126,18 @@ class PubMedExportDom {
 		}
 		else {
 		   $articleID = $article->getID();           
-		   $qualifiedArk = shell_exec('sqlite3 /apps/eschol/subi/xtf-erep/control/db/arks.db "select id from arks where source = \'ojs\' AND external_id=' .$articleID. '"');
-		   error_log('sqlite3 /apps/eschol/subi/xtf-erep/control/db/arks.db "select id from arks where source = \'ojs\' AND external_id=' .$articleID. '"');
-		   error_log($qualifiedArk . "is the ARK for" . $articleID);
+		   $qualifiedArk = rtrim(shell_exec('mysql --defaults-extra-file=/apps/eschol/.passwords/jschol_dba_pw.mysql --skip-column-names --silent -e "select id from arks where source = \'ojs\' AND external_id=' .$articleID. '"'));
+		   #error_log('mysql --defaults-extra-file=/apps/eschol/.passwords/jschol_dba_pw.mysql --skip-column-names --silent -e "select id from arks where source = \'ojs\' AND external_id=' .$articleID. '"');
+		   error_log($qualifiedArk . " is the ARK for " . $articleID);
           
 		    if (!$qualifiedArk){
 		         error_log($articleID . " has no ARK in the database!");
 		      }
 		    else {
-			   $ark = preg_replace("/ark:/","",$qualifiedArk);
+			   $ark = "13030/" . $qualifiedArk;
 			   $arkNode =&  XMLCustomWriter::createChildWithText($doc, $root, 'ELocationID', $ark, false);
                XMLCustomWriter::setAttribute($arkNode, 'EIdType', 'pii');
-			   error_log($articleID . " has this ARK" . $ark);
+			   error_log($articleID . " has this ARK " . $ark);
 			  }
         }
 		
