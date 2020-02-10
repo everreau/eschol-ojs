@@ -17,8 +17,8 @@
 
 import('lib.pkp.classes.xml.XMLCustomWriter');
 
-define('PUBMED_DTD_URL', 'http://www.ncbi.nlm.nih.gov:80/entrez/query/static/PubMed.dtd');
-define('PUBMED_DTD_ID', '-//NLM//DTD PubMed 2.0//EN');
+define('PUBMED_DTD_URL', 'https://dtd.nlm.nih.gov/ncbi/pubmed/in/PubMed.dtd');
+define('PUBMED_DTD_ID', '-//NLM//DTD PubMed 2.8//EN');
 
 class PubMedExportDom {
 
