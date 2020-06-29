@@ -760,13 +760,13 @@ class IssueManagementHandler extends EditorHandler {
 		
 		
 
-		if (($issueVolume == 1) && ($issueNumber == 1) && ((gethostname() == 'pub-submit-prd-2a' ) || (gethostname() == 'pub-submit-prd-2c' ))){
+		if (($issueVolume == 1) && ($issueNumber == 1) && ((gethostname() == 'pub-submit2-prd'))){
 		    $message = $journalTitle . ' has just published its first issue, Volume ' . $issueVolume . ' Issue ' . $issueNumber;
-		    mail("help@escholarship.org,monica.westin@ucop.edu","eScholarship Journal First Issue Publication Notification", $message);
+		    mail("help@escholarship.org","eScholarship Journal First Issue Publication Notification", $message);
         }
-		else if (($issueVolume > 1) && ($issueNumber > 1) && ((gethostname() == 'pub-submit-prd-2a' ) || (gethostname() == 'pub-submit-prd-2c' ))){
+		else if (($issueVolume > 1) && ($issueNumber > 1) && ((gethostname() == 'pub-submit2-prd' ) )){
 		    $message = $journalTitle . ' has just published an issue, Volume ' . $issueVolume . ' Issue ' . $issueNumber;
-		    mail("monica.westin@ucop.edu","eScholarship Journal Issue Publication Notification", $message);
+		    mail("help@escholarship.org","eScholarship Journal Issue Publication Notification", $message);
         }
 
 		else {
