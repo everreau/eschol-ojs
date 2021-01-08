@@ -189,14 +189,14 @@
 	<tr>
 		<td colspan="7" class="separator">&nbsp;</td>
 	</tr>
-	<tr>
+	<tr bgcolor="#FFFF99">
 		<td width="28%" colspan="2">{translate key="submission.supplementaryFiles"}</td>
 		<td width="34%" colspan="2" class="heading">{translate key="common.file"}</td>
 		<td width="16%" class="heading">{translate key="common.order"}</td>
 		<td width="16%" colspan="2" class="heading">{translate key="common.action"}</td>
 	</tr>
 	{foreach name=suppFiles from=$submission->getSuppFiles() item=suppFile}
-	<tr>
+	<tr bgcolor="#FFFF99">
 		<td width="2%">{$smarty.foreach.suppFiles.iteration}.</td>
 		<td width="26%">{$suppFile->getSuppFileTitle()|escape}</td>
 		<td colspan="2"><a href="{url op="downloadFile" path=$submission->getId()|to_array:$suppFile->getFileId()}" class="file">{$suppFile->getFileName()|escape}</a>&nbsp;&nbsp;{$suppFile->getDateModified()|date_format:$dateFormatShort}</td>
